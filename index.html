@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Menu Card</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+  <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <!-- Local StyleSheet -->
+  <link href ='./style.css' rel = 'stylesheet'/> 
+  <!-- <script src='./js/addButton.js'></script> -->
+  <script src='./js/markerHandler.js'></script>
+
+</head> 
+
+<body style="margin : 0px; overflow: hidden;">
+
+  <a-scene 
+  embedded vr-mode-ui="enabled: false"     
+  arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;debugUIEnabled: false;"
+  gesture-detector create-buttons>
+
+    <!-- Camera -->
+    <a-entity camera></a-entity>
+    <a-assets>
+      <a-asset-item id = 'pizza' src='./assets1/makers/chichen-itza/pattern-chichen-itza.patt'></a-asset-item>
+      
+      <a-asset-item id = 'model-chichen-itza' src = 'assets1/models/chichen-itza/scene.gltf'></a-asset-item>
+      <a-asset-item id = 'model-christ-the-redeemer' src = 'assets/models/christ-the-redeemer/scene.gltf'></a-asset-item>
+      <a-asset-item id = 'model-colloseum' src = 'assets/models/colloseum/scene.gltf'></a-asset-item>
+      <a-asset-item id = 'model-eiffel-tower' src = 'assets/models/eiffel-tower/scene.gltf'></a-asset-item>
+      <a-asset-item id = 'model-great-wall-of-china' src = 'assets/models/great-wall-of-china/scene.gltf'></a-asset-item>
+      <a-asset-item id = 'model-machu-pichu' src = 'assets/models/machu-pichu/scene.gltf'></a-asset-item>
+      <a-asset-item id = 'model-taj-mahal' src = 'assets/models/taj-mahal/scene.gltf'></a-asset-item>
+    </a-assets> 
+   
+  <a-marker id = 'monument1-marker' type = 'pattern' url = './assets1/makers/chichen-itza/pattern-chichen-itza.patt' cursor = 'rayOrigin:mouse' marker-handler>   
+      <a-entity id = 'chichen_itza-model' position = '-5 -2 -20' scale = '1 1 1' gltf-model = '#model-chichen-itza' gesture-handler></a-entity>
+      <a-plane position = '0 0 0' width = '1.5' height = '1.5' rotation = '-90 0 0'>
+        <a-plane position = '0 0.8 0.02' width = '1.3' height = '0.3' rotation = '0 0 0' color = 'pink'></a-plane>
+        <a-entity position = '0 0 0.1' rotation = '0 0 0' text = 'color: black; align: center; width: 2; font: monoid; value: At its peak, Chichen Itza was the\n most populous city in the entire Yucatan Peninsula. Even today, \nits ruins reflect a great civilization filled\n with architectural marvels and ancient\n secrets.'></a-entity>
+      </a-plane>
+  </a-marker>
+
+  <a-marker id = 'monument2-marker' type = 'pattern' url = './assets1/makers/christ-the-redeemer/pattern-christ-the-redeemer.patt' cursor = 'rayOrigin:mouse' marker-handler>   
+    <a-entity id = 'christ_the_redeemer-model' position = '-5 -2 -20' scale = '1 1 1' gltf-model = '#model-christ-the-redeemer' gesture-handler></a-entity>
+    <a-plane position = '0 0 0' width = '1.5' height = '1.5' rotation = '-90 0 0'>
+      <a-plane position = '0 0.8 0.02' width = '1.3' height = '0.3' rotation = '0 0 0' color = 'pink'></a-plane>
+      <a-entity position = '0 0 0.1' rotation = '0 0 0' text = 'color: black; align: center; width: 2; font: monoid; value: The statue of Christ the Redeemer has become a symbolic protector of people. Like Jesus Christ, the statue protects the urban environment, like a roof over your head. Cristo Redentor is as important as any shelter. Christ the Redeemer provides protection for the soul.'></a-entity>
+    </a-plane>
+  </a-marker>
+
+  <a-marker id = 'monument3-marker' type = 'pattern' url = './assets1/makers/colloseum/pattern-colloseum.patt' cursor = 'rayOrigin:mouse' marker-handler>   
+    <a-entity id = 'colloseum-model' position = '-5 -2 -20' scale = '1 1 1' gltf-model = '#model-colloseum' gesture-handler></a-entity>
+    <a-plane position = '0 0 0' width = '1.5' height = '1.5' rotation = '-90 0 0'>
+      <a-plane position = '0 0.8 0.02' width = '1.3' height = '0.3' rotation = '0 0 0' color = 'pink'></a-plane>
+      <a-entity position = '0 0 0.1' rotation = '0 0 0' text = 'color: black; align: center; width: 2; font: monoid; value: The Colosseum in Rome, Italy, is a large amphitheater that hosted events like gladiatorial games. Severe damage was inflicted on the Colosseum by the great earthquake in 1349, causing the outer south side, lying on a less stable alluvial terrain, to collapse.'></a-entity>
+    </a-plane>
+  </a-marker>  
+
+  <a-marker id = 'monument4-marker' type = 'pattern' url = './assets1/makers/eiffel-tower/pattern-eiffel-tower.patt' cursor = 'rayOrigin:mouse' marker-handler>   
+    <a-entity id = 'eiffel_tower-model' position = '-5 -2 -20' scale = '1 1 1' gltf-model = '#model-eiffel-tower' gesture-handler></a-entity>
+    <a-plane position = '0 0 0' width = '1.5' height = '1.5' rotation = '-90 0 0'>
+      <a-plane position = '0 0.8 0.02' width = '1.3' height = '0.3' rotation = '0 0 0' color = 'pink'></a-plane>
+      <a-entity position = '0 0 0.1' rotation = '0 0 0' text = 'color: black; align: center; width: 2; font: monoid; value: The Eiffel Tower is one of the worlds most recognizable landmarks. The tower was designed as the centerpiece of the 1889 Worlds Fair in Paris and was meant to commemorate the centennial of the French Revolution and show off Frances modern mechanical prowess on a world stage.'></a-entity>
+    </a-plane>
+  </a-marker>  
+
+  <a-marker id = 'monument5-marker' type = 'pattern' url = './assets1/makers/great-wall-of-china/pattern-great-wall-of-china.patt' cursor = 'rayOrigin:mouse' marker-handler>   
+    <a-entity id = 'great_wall_of_china-model' position = '-5 -2 -20' scale = '1 1 1' gltf-model = '#model-great-wall-of-china' gesture-handler></a-entity>
+    <a-plane position = '0 0 0' width = '1.5' height = '1.5' rotation = '-90 0 0'>
+      <a-plane position = '0 0.8 0.02' width = '1.3' height = '0.3' rotation = '0 0 0' color = 'pink'></a-plane>
+      <a-entity position = '0 0 0.1' rotation = '0 0 0' text = 'color: black; align: center; width: 2; font: monoid; value: The Great Wall of China is the largest defense project in human history. It is a large-scale military project built in ancient China to provide protection from northern nomadic tribes.'></a-entity>
+    </a-plane>
+  </a-marker>  
+
+  <a-marker id = 'monument6-marker' type = 'pattern' url = './assets1/makers/machu-picchu/pattern-machu-picchu.patt' cursor = 'rayOrigin:mouse' marker-handler>   
+    <a-entity id = 'machu_picchu-model' position = '-5 -2 -20' scale = '1 1 1' gltf-model = '#model-machu-picchu' gesture-handler></a-entity>
+    <a-plane position = '0 0 0' width = '1.5' height = '1.5' rotation = '-90 0 0'>
+      <a-plane position = '0 0.8 0.02' width = '1.3' height = '0.3' rotation = '0 0 0' color = 'pink'></a-plane>
+      <a-entity position = '0 0 0.1' rotation = '0 0 0' text = 'color: black; align: center; width: 2; font: monoid; value: More than 7,000 feet above sea level in the Andes Mountains, Machu Picchu is the most visited tourist destination in Peru.'></a-entity>
+    </a-plane>
+  </a-marker>  
+
+  <a-marker id = 'monument7-marker' type = 'pattern' url = './assets1/makers/taj-mahal/pattern-taj-mahal.patt' cursor = 'rayOrigin:mouse' marker-handler>   
+    <a-entity id = 'taj_mahal-model' position = '-5 -2 -20' scale = '1 1 1' gltf-model = '#model-taj-mahal' gesture-handler></a-entity>
+    <a-plane position = '0 0 0' width = '1.5' height = '1.5' rotation = '-90 0 0'>
+      <a-plane position = '0 0.8 0.02' width = '1.3' height = '0.3' rotation = '0 0 0' color = 'pink'></a-plane>
+      <a-entity position = '0 0 0.1' rotation = '0 0 0' text = 'color: black; align: center; width: 2; font: monoid; value: An immense mausoleum of white marble, built in Agra between 1631 and 1648 by order of the Mughal emperor Shah Jahan in memory of his favourite wife, the Taj Mahal is the jewel of Muslim art in India and one of the universally admired masterpieces of the worlds heritage.'></a-entity>
+    </a-plane>
+  </a-marker>  
+
+  </a-scene>
+</body>
+
+</html>

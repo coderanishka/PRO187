@@ -1,0 +1,11 @@
+Model Information:
+* title:	Great Wall of China
+* source:	https://sketchfab.com/3d-models/great-wall-of-china-032b7bbd2634460f9bb74a162366fa8a
+* author:	vb2 (https://sketchfab.com/vb2)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Great Wall of China" (https://sketchfab.com/3d-models/great-wall-of-china-032b7bbd2634460f9bb74a162366fa8a) by vb2 (https://sketchfab.com/vb2) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
